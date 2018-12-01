@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XmlLib.Interfaces
 {
-    public interface IProvider<TSource>
+    public interface IProvider<out TSource>
     {
         IEnumerable<TSource> Load();
     }

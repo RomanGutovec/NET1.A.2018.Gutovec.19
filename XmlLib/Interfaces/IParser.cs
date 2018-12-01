@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XmlLib.Interfaces
 {
-    public interface IParser<TSource, TResult>
+    public interface IParser<in TSource,out TResult>
     {
         TResult Parse(TSource source);
     }

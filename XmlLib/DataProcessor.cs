@@ -6,18 +6,19 @@ using XmlLib.Interfaces;
 
 namespace XmlLib
 {
-    public abstract class DataProcessor<TSource, TResult>
+    public class DataProcessor<TSource, TResult>
     {
         #region Fields
         private List<TSource> sourceElements;
         private List<TResult> resultElements;
+
         private IProvider<TSource> provider;
         private Mapper<TSource, TResult> mapper;
-        private IStorage storage;
+        private IStorage<TResult> storage;
         #endregion
 
         #region Constructors
-        public DataProcessor(IProvider<TSource> provider, Mapper<TSource, TResult> mapper, IStorage storage)
+        public DataProcessor(IProvider<TSource> provider, Mapper<TSource, TResult> mapper, IStorage<TResult> storage)
         {
             this.provider = provider ?? throw new ArgumentNullException(nameof(provider));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
@@ -40,12 +41,8 @@ namespace XmlLib
                 }
             }
 
-            storage.Write(CreateDocument(resultElements));
+            storage.Write(resultElements);
         }
-        
-        protected abstract XDocument CreateDocument(IEnumerable<TResult> urls);
-
-        protected abstract XElement CreateElementDocument(TResult url);
         #endregion
     }
 }

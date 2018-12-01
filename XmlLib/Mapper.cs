@@ -16,7 +16,7 @@ namespace XmlLib
     {
         #region
         private readonly IParser<TSource, TResult> parser;
-        private readonly IValidator validator;
+        private readonly IValidator<TSource> validator;
         #endregion
 
         #region Constructors
@@ -25,7 +25,7 @@ namespace XmlLib
         /// </summary>
         /// <param name="parser">Type which can convert source type to result type </param>
         /// <param name="validator">Type which checks parameters</param>
-        public Mapper(IParser<TSource, TResult> parser, IValidator validator)
+        public Mapper(IParser<TSource, TResult> parser, IValidator<TSource> validator)
         {
             this.parser = parser ?? throw new ArgumentNullException($"Parser {nameof(parser)} has no instance");
             this.validator = validator ?? throw new ArgumentNullException($"Validator {nameof(validator)} has no instance");
@@ -40,7 +40,7 @@ namespace XmlLib
         /// <returns>Result type after the conversation</returns>
         public TResult MapSomethingInSomething(TSource source)
         {
-            if (validator.Check(source.ToString()))
+            if (validator.Check(source))
             {
                 return parser.Parse(source);
             }

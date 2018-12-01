@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using System.Xml.Schema;
 using Ninject;
 using XmlLib;
+using XmlLib.DependencyResolver;
 using XmlLib.Helpers;
 using XmlLib.Interfaces;
 
@@ -17,9 +18,9 @@ namespace XmlLibConsole
     {
         static void Main(string[] args)
         {
-            var processor = new XMLDataProcessor(new UriStringDataProvider("source.txt"), new Mapper<string, Url>(new ToUrlParser(), new UriValidator()), new XMLStorage("resultURLS.xml"));
-            processor.Process();
-
+            IKernel ninjectKernel = new StandardKernel(new Bindings());
+            DataProcessor<string,Url> processor = ninjectKernel.Get<DataProcessor<string, Url>>();
+            
             Validation("newresult.xml", "AddressesSchema.xsd");
             Console.ReadLine();
         }

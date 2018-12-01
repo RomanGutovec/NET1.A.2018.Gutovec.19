@@ -12,10 +12,10 @@ namespace XmlLib
     /// <summary>
     /// Represents opportunity to check specified uri
     /// </summary>
-    public class UriValidator : IValidator
+    public class UriValidator : IValidator<string>
     {
         /// <summary>
-        /// Cheks specified url address
+        /// Checks specified url address
         /// </summary>
         /// <param name="stringUrl">String representation of the url address</param>
         /// <returns>Boolean value(true if the url is correct)</returns>

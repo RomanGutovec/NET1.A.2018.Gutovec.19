@@ -13,7 +13,7 @@ namespace XmlLib.Helpers
         /// <summary>
         /// Convert string into Url
         /// </summary>
-        /// <param name="url">String which repsresents simple url address</param>
+        /// <param name="url">String which represents simple url address</param>
         /// <returns>Converted into url string</returns>
         public Url Parse(string url)
         {

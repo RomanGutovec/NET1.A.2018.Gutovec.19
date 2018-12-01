@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlLib", "XmlLib\XmlLib.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlLibConsole", "XmlLibConsole\XmlLibConsole.csproj", "{FA1DE82C-FE6F-40F8-9C30-32EEEDAB3CE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlLib.Tests", "XmlLib.Tests\XmlLib.Tests.csproj", "{31F62CB1-5AA6-462D-A3CD-ABC9EC8CB42F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FA1DE82C-FE6F-40F8-9C30-32EEEDAB3CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA1DE82C-FE6F-40F8-9C30-32EEEDAB3CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA1DE82C-FE6F-40F8-9C30-32EEEDAB3CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F62CB1-5AA6-462D-A3CD-ABC9EC8CB42F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F62CB1-5AA6-462D-A3CD-ABC9EC8CB42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F62CB1-5AA6-462D-A3CD-ABC9EC8CB42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F62CB1-5AA6-462D-A3CD-ABC9EC8CB42F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,8 +7,8 @@ using System.Xml.Linq;
 
 namespace XmlLib.Interfaces
 {
-    public interface IStorage
+    public interface IStorage<in T>
     {
-        void Write(XDocument document);
+        void Write(IEnumerable<T> items);
     }
 }

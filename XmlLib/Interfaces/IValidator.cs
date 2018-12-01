@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace XmlLib.Interfaces
 {
-    public interface IValidator
+    public interface IValidator<in T>
     {
-        bool Check(string someString);
+        bool Check(T elementTocheck);
     }
 }
